@@ -96,10 +96,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         }
 
         //If Rate fragment is true, show like and dislike button.
-        if (isRate) {
-            bind.likesLayout.setVisibility(View.VISIBLE);
-
+        if (!isRate) {
+            bind.likesLayout.setVisibility(View.INVISIBLE);
         } else {
+            bind.likesLayout.setVisibility(View.VISIBLE);
             checkLikeStatus(product.getProductId());
 
             //Dislike logic to check the states in firebase node 'Votes'

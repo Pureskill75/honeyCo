@@ -11,10 +11,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,11 +39,13 @@ public class RateFragment extends Fragment {
     private List<ProductModel> productModelList;
     private ProgressDialog progressDialog;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_rate, container, false);
+
         // check internet connection
         ConnectivityManager conMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = conMgr.getActiveNetworkInfo();
@@ -52,7 +57,7 @@ public class RateFragment extends Fragment {
             progressDialog.setMessage("Please Wait");
             progressDialog.show();
 
-            rateRecyclerView = root.findViewById(R.id.rate_recyclerview);
+            rateRecyclerView = root.findViewById(R.id.rate_recyclerView);
             productModelList = new ArrayList<>();
 
             // create spacing between recyclerview item
@@ -88,49 +93,6 @@ public class RateFragment extends Fragment {
                 }
             });
 
-
-    /*        reference = FirebaseDatabase.getInstance().getReference("Votes");
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    productIDList.clear();
-                    for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                        String productKey = snapshot1.getKey();
-                        productIDList.add(productKey);
-                    }
-                    DatabaseReference reference1;
-                    reference1 = FirebaseDatabase.getInstance().getReference("Products");
-                    reference1.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            productModelList.clear();
-                            for (DataSnapshot snapshot1 : snapshot.getChildren()) {
-                                // check if the product is vote or not by the user
-                                if (productIDList.contains(snapshot1.getKey())) {
-                                    ProductModel product = snapshot1.getValue(ProductModel.class);
-                                    productModelList.add(product);
-                                }
-                            }
-                            HomeAdapter homeAdapter = new HomeAdapter(productModelList, getContext(), true, false, true);
-                            rateRecyclerView.setAdapter(homeAdapter);
-                            progressDialog.dismiss();
-                            homeAdapter.notifyDataSetChanged();
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-     */
 
         }
 

@@ -171,7 +171,7 @@ public class SettingsFragment extends Fragment {
                         binding.countryTv.setText(user.getCountry());
                         binding.editAddress.setText(user.getAddress());
                         user_image = user.getEmail();
-                        if (user.getImage().equalsIgnoreCase("null")) {
+                        if (user.getImage().equalsIgnoreCase("")) {
                             binding.profileImageSettings.setImageResource(R.drawable.profile_placeholder);
                         } else {
                             Picasso.get().load(user.getImage()).placeholder(R.drawable.profile_placeholder)

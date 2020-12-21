@@ -98,7 +98,7 @@ public class ProfileFragment extends Fragment {
                     postcodeTxt.setText(user.getPostcode());
                     countryText.setText(user.getCountry());
                     addressText.setText(user.getAddress());
-                    if (user.getImage().equalsIgnoreCase("null")) {
+                    if (user.getImage().equalsIgnoreCase("")) {
                         profileImage.setImageResource(R.drawable.profile_placeholder);
                     } else {
 

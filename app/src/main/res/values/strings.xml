@@ -47,7 +47,6 @@
     <string name="description">Description</string>
     <string name="save">Save</string>
     <string name="enter_in_draw">Enter Now</string>
-    <string name="quote">If It\'s Not A Deal it\'s A Give Away.</string>
     <string name="create_account">Create Account</string>
     <string name="login">Login</string>
     <string name="HoneyBox">HoneyBox</string>
@@ -73,8 +72,12 @@
     <string name="about">About</string>
     <string name="coming_soon">Coming Soon</string>
     <string name="entered">Entered</string>
-    <string name="about_body_two">We also work with social media influencers as well as small to medium size businesses to provide a wide array of promotional items to chose from which will be available to use in free of charge giveaways.Our current draws are free to enter and upon winning we will send the prize to the winner after confirming their credentials.</string>
-    <string name="about_body_one">Honey Collaboration is a give-away platform based in the United Kingdom. We run giveaways on many different items such as Gadgets, Sports Gear, Fashion item etc.</string>
+    <string name="about_body_two">We also work with social media influencers as well as small to medium
+        size businesses to provide a wide array of promotional items to chose from which will
+        be available to use in free of charge giveaways.Our current draws are free to enter and upon winning
+        we will send the prize to the winner after confirming their credentials.</string>
+    <string name="about_body_one">Honey Collaboration is a Giveaway/eCommerce platform based in the United Kingdom.
+        We run giveaways on many different items such as Gadgets, Sports Gear, Fashion item etc.</string>
     <string name="about_contact_us">Contact Us</string>
     <string name="about_header">What is Honey Co.?</string>
     <string name="about_title">Honey Co.</string>
@@ -102,4 +105,9 @@
     <string name="like">0</string>
     <string name="sign_up_logo">sign_up_logo</string>
     <string name="dislike_image_view">dislike image view</string>
+    <string name="click_me">Click me</string>
+    <string name="about_image_logo">About Image Logo</string>
+    <string name="instagram_tv">Instagram</string>
+    <string name="tool_bar_image">Tool Bar Image</string>
+    <string name="rate_intro_iv">rate intro iv</string>
 </resources>

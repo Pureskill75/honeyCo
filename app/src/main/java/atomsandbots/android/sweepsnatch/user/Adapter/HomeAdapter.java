@@ -47,7 +47,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     private final boolean isProductLayout;
     private final boolean isAdmin;
     private final boolean isRate;
-    private List<ProductModel> productModelList;
+    private final List<ProductModel> productModelList;
     private final Context context;
 
 // isRate check if the view is come from Rate or Hate activity or not.
