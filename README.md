@@ -19,6 +19,15 @@ Note: _Complete features of the app are not included in this repo as this is onl
 Upon building the app successfully, users must login manually.
 Google Auth is not implemented in Firebase (throws a sign in error but doesn't crush). 
 
+## Features
+
+* Firebase Storage
+* Firebase authentication
+* Firebase Crashlytics
+* View Binding 
+* Espresso Test Unit 
+
+
 
 ## Libraries
 
