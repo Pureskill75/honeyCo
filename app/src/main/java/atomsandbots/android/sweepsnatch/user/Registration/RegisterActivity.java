@@ -67,22 +67,4 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    //Is this Supposed to be here at all?
-    private void DialogNoInternet() {
-        new AlertDialog.Builder(RegisterActivity.this)
-                .setTitle(getResources().getString(R.string.app_name))
-                .setMessage(getResources().getString(R.string.internet_error))
-                .setPositiveButton(R.string.no_internet_exit_button, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                })
-                .setNegativeButton(R.string.no_internet_retry_button, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        onStart();
-                    }
-                }).show();
-    }
 }

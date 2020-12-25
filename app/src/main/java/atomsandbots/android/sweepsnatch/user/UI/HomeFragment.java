@@ -2,9 +2,6 @@ package atomsandbots.android.sweepsnatch.user.UI;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.database.Cursor;
-import android.graphics.Rect;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -14,10 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -35,8 +30,6 @@ import atomsandbots.android.sweepsnatch.user.Model.ProductModel;
 import atomsandbots.android.sweepsnatch.user.R;
 
 public class HomeFragment extends Fragment {
-
-
 
     private RecyclerView homeRecyclerView;
     private List<ProductModel> productModelList;

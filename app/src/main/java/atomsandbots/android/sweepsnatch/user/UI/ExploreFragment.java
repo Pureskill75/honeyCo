@@ -11,13 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,7 +30,7 @@ import atomsandbots.android.sweepsnatch.user.Model.ProductModel;
 import atomsandbots.android.sweepsnatch.user.R;
 
 
-public class RateFragment extends Fragment {
+public class ExploreFragment extends Fragment {
     private RecyclerView rateRecyclerView;
 
     private List<ProductModel> productModelList;
@@ -44,7 +41,9 @@ public class RateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_rate, container, false);
+        View root = inflater.inflate(R.layout.fragment_explore, container, false);
+
+
 
         // check internet connection
         ConnectivityManager conMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -93,9 +92,11 @@ public class RateFragment extends Fragment {
                 }
             });
 
-
         }
 
         return root;
     }
+
+
+
 }

@@ -18,14 +18,15 @@
     <fragment
         android:id="@+id/nav_draws"
         android:name="atomsandbots.android.sweepsnatch.user.UI.DrawFragment"
-        android:label="Your Draws"
+        android:label="Your Giveaways"
         tools:layout="@layout/fragment_draw" />
 
     <fragment
         android:id="@+id/nav_rate"
-        android:name="atomsandbots.android.sweepsnatch.user.UI.RateFragment"
-        android:label="Rate or Hate"
-        tools:layout="@layout/fragment_rate" />
+        android:name="atomsandbots.android.sweepsnatch.user.UI.ExploreFragment"
+        android:label="Explore"
+        tools:layout="@layout/fragment_explore" />
+
     <fragment
         android:id="@+id/nav_setting"
         android:name="atomsandbots.android.sweepsnatch.user.UI.SettingsFragment"

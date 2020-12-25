@@ -19,9 +19,9 @@
             android:icon="@drawable/ic_gift"
             android:title="@string/draws" />
         <item
-            android:id="@+id/nav_rate"
-            android:icon="@drawable/ic_rate_24"
-            android:title="@string/rate_or_hate" />
+            android:id="@+id/nav_explore"
+            android:icon="@drawable/ic_search"
+            android:title="@string/explore" />
 
         <item
             android:id="@+id/nav_setting"

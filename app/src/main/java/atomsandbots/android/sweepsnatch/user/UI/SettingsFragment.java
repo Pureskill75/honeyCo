@@ -94,6 +94,9 @@ public class SettingsFragment extends Fragment {
                 LogoutUser();
             }
             return true;
+            //User can delete account from setting menu item
+        } else if (item.getItemId() == R.id.delete_account_btn) {
+            DeleteAccount();
         }
         return false;
     }
@@ -134,7 +137,6 @@ public class SettingsFragment extends Fragment {
             Toast.makeText(getContext(), "Check Internet Connection", Toast.LENGTH_SHORT).show();
             binding.saveBtnSettings.setEnabled(false);
             binding.profileImageSettings.setEnabled(false);
-            binding.deleteAccountBtn.setEnabled(false);
             DataBaseAdapter baseAdapter = new DataBaseAdapter(getContext());
             Cursor cursor = baseAdapter.getData();
             while (cursor.moveToNext()) {
@@ -151,7 +153,7 @@ public class SettingsFragment extends Fragment {
                 }
             }
         } else {
-            binding.deleteAccountBtn.setEnabled(true);
+
             binding.saveBtnSettings.setEnabled(true);
             binding.profileImageSettings.setEnabled(true);
             mStorageRef = FirebaseStorage.getInstance().getReference().child("Profiles");
@@ -198,12 +200,7 @@ public class SettingsFragment extends Fragment {
                     UpdateProfile();
                 }
             });
-            binding.deleteAccountBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    DeleteAccount();
-                }
-            });
+
         }
         return v;
     }

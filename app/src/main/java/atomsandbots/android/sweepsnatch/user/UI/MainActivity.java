@@ -3,15 +3,17 @@ package atomsandbots.android.sweepsnatch.user.UI;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,9 +40,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import atomsandbots.android.sweepsnatch.user.Model.UserModel;
 import atomsandbots.android.sweepsnatch.user.R;
-import atomsandbots.android.sweepsnatch.user.Registration.RegisterActivity;
 import atomsandbots.android.sweepsnatch.user.RoomDatabase.DataBaseAdapter;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
 
     private TextView userNameTextView, userEmailTextView;
+
     private CircleImageView profileImageView;
+    private ImageView networkConnectionImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     navController.popBackStack(R.id.nav_home, false);
                     navController.navigate(R.id.nav_draws);
                     //Rate or Hate fragment
-                } else if (menuItem.getItemId() == R.id.nav_rate) {
+                } else if (menuItem.getItemId() == R.id.nav_explore) {
                     navController.popBackStack(R.id.nav_home, false);
                     navController.navigate(R.id.nav_rate);
                     //Settings frag
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (netInfo == null) {
             Toast.makeText(MainActivity.this, "Check Internet Connection", Toast.LENGTH_SHORT).show();
+            alertDialog();
             DataBaseAdapter baseAdapter = new DataBaseAdapter(MainActivity.this);
             Cursor cursor = baseAdapter.getData();
 
@@ -134,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         } else {
+
+            //Get Firebase instance to display info for current user
             FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
             if (firebaseUser != null) {
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -163,26 +168,35 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //This alert dialog will appear should the user open MainActivity when all network == null
+    private void alertDialog() {
+        ConnectivityManager conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        final NetworkInfo netInfo = conMgr.getActiveNetworkInfo();
 
-    private void LogoutUser() {
-        AlertDialog.Builder logoutDialog = new AlertDialog.Builder(MainActivity.this);
-        logoutDialog.setTitle("Logout")
-                .setMessage("Are you sure to logout")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Connection Failed")
+                .setMessage("Please Check Your Internet Connection")
+                .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        SharedPreferences preferences = getApplicationContext().getSharedPreferences("LoginDetails", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putBoolean("isLogin", false);
-                        editor.apply();
-                        FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-                        finish();
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        if (netInfo == null) {
+                            alertDialog();
+                        } else {
+                            //If Network is back on, reload MainActivity
+                            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 })
-                .setNegativeButton("No", null)
-                .show();
+                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).create();
+        dialog.show();
     }
+
 
     //share intent builder for sharing app
     private void ShareApp() {

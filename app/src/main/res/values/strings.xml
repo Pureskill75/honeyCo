@@ -58,7 +58,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="home">Home</string>
-    <string name="draws">Draws</string>
+    <string name="draws">Your Giveaways</string>
     <string name="profile">Profile</string>
     <string name="communication">Communication</string>
     <string name="share">Share</string>
@@ -68,7 +68,7 @@
 
     <string name="splash_screen">splash_screen</string>
     <string name="reg_activity_logo">reg_activity_logo</string>
-    <string name="rate_or_hate">Rate</string>
+    <string name="explore">Explore</string>
     <string name="about">About</string>
     <string name="coming_soon">Coming Soon</string>
     <string name="entered">Entered</string>
@@ -82,7 +82,6 @@
     <string name="about_header">What is Honey Co.?</string>
     <string name="about_title">Honey Co.</string>
     <string name="logout_menu_item">Logout</string>
-    <string name="delete_account">Delete Account</string>
     <string name="about_email_image">about_email_image</string>
     <string name="about_email_address">honeycollaborations@gmail.com</string>
     <string name="rate_or_hate_next_giveaways">Rate or Hate Next Giveaways</string>
@@ -110,4 +109,5 @@
     <string name="instagram_tv">Instagram</string>
     <string name="tool_bar_image">Tool Bar Image</string>
     <string name="rate_intro_iv">rate intro iv</string>
+    <string name="delete_account_menu">Delete account</string>
 </resources>

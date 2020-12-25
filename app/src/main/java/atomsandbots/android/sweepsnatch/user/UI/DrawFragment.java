@@ -93,6 +93,7 @@ public class DrawFragment extends Fragment {
                         ProductModel product = snapshot1.getValue(ProductModel.class);
                         productModelList.add(product);
                     }
+                    //Reuse Home Adapter
                     HomeAdapter homeAdapter = new HomeAdapter(productModelList, getContext(), false, false,false);
                     drawRecyclerView.setAdapter(homeAdapter);
                     homeAdapter.notifyDataSetChanged();
