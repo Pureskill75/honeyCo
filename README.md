@@ -5,7 +5,7 @@
 
 
 
-This repo is an example of an app (Honey Co.) that allows users to enter giveaway prizes by simply signing up and creating an account.
+This repo is an example of an app (Honey Co.) that allows users to enter giveaway competitions by simply signing up and creating an account.
 Upon entering a draw, users will have their information saved in local database (Room) and this can be accessed offline.
 Although optional, users are encouraged to save their addresses for shipping purposes and this info can be updated 
 in the setting fragment.
@@ -18,6 +18,15 @@ Note: _Complete features of the app are not included in this repo as this is onl
 
 Upon building the app successfully, users must login manually.
 Google Auth is not implemented in Firebase (throws a sign in error but doesn't crush). 
+
+## Features
+
+* Firebase Storage
+* Firebase authentication
+* Firebase Crashlytics
+* View Binding 
+* Espresso Test Unit 
+
 
 
 ## Libraries
