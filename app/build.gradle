@@ -6,14 +6,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
 
-    signingConfigs {
-        honeyco {
-            storeFile file('..\\key\\key.jks')
-            keyAlias 'honeyco'
-            storePassword 'Threefourfive67'
-            keyPassword 'Threefourfive67'
-        }
-    }
+
 
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
@@ -39,7 +32,7 @@ android {
                 minifyEnabled false
                 multiDexEnabled true
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-                signingConfig signingConfigs.honeyco
+               
             }
 
             firebaseCrashlytics {
