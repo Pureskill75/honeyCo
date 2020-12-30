@@ -17,16 +17,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
+
     <ImageView
         android:id="@+id/login_logo_sign_in"
         android:layout_width="331dp"
         android:layout_height="131dp"
         android:layout_marginTop="12dp"
+        android:contentDescription="@string/sign_up_logo"
         android:src="@drawable/login_honey_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:contentDescription="@string/sign_up_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/sign_up_name"
@@ -149,7 +150,7 @@
         android:drawableLeft="@drawable/common_google_signin_btn_icon_light_focused"
         android:drawableEnd="@color/common_google_signin_btn_text_light_disabled"
         android:drawableRight="@color/common_google_signin_btn_text_light_disabled"
-        android:text="@string/continue_with_google"
+        android:text="@string/sign_up_with_google"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

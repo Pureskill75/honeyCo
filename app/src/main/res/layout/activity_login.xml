@@ -151,7 +151,7 @@
         android:drawableLeft="@drawable/common_google_signin_btn_icon_light_focused"
         android:drawableEnd="@color/common_google_signin_btn_text_light_disabled"
         android:drawableRight="@color/common_google_signin_btn_text_light_disabled"
-        android:text="@string/continue_with_google"
+        android:text="@string/sign_in_with_google"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
