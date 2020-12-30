@@ -6,14 +6,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
 
-    signingConfigs {
-        honeyco {
-            storeFile file('..\\key\\key.jks')
-            keyAlias 'honeyco'
-            storePassword 'Threefourfive67'
-            keyPassword 'Threefourfive67'
-        }
-    }
+ 
 
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
@@ -39,7 +32,7 @@ android {
                 minifyEnabled false
                 multiDexEnabled true
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-                signingConfig signingConfigs.honeyco
+                
             }
 
             firebaseCrashlytics {
@@ -82,7 +75,6 @@ android {
         //Firebase deps
         implementation platform('com.google.firebase:firebase-bom:25.12.0')
         implementation 'com.google.firebase:firebase-analytics'
-        implementation 'com.google.firebase:firebase-messaging'
         implementation 'com.google.firebase:firebase-auth:20.0.1'
         implementation 'com.google.firebase:firebase-database:19.6.0'
         implementation 'com.google.firebase:firebase-storage:19.2.1'
@@ -95,8 +87,6 @@ android {
         //Recommended: Add the Google Analytics SDK.
         implementation 'com.google.firebase:firebase-analytics:18.0.0'
 
-
-
     }
 
 }
@@ -104,5 +94,4 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.firebase:firebase-messaging:21.0.1'
 }
