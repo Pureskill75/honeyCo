@@ -8,9 +8,9 @@
 This repo is an example of an app (Honey Co.) that allows users to enter giveaway competitions by simply signing up and creating an account.
 Upon entering a draw, users will have their information saved in local database (Room) and this can be accessed offline.
 Although optional, users are encouraged to save their addresses for shipping purposes and this info can be updated 
-in the setting fragment.
+in the settings page.
 
-The app consists of a _rate or hate_ fragement where users can rate upcoming giveaways.
+The app consists of a _rate or hate_ activity where users can rate upcoming giveaways.
 Honey Co. will be indexable in the Uinted Kingdom only. Launch date is January 2021 on Android devices (iOS release date TBC).  
 Note: _Complete features of the app are not included in this repo as this is only an example of a real production app_. 
 
