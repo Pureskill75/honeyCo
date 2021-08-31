@@ -11,7 +11,7 @@ Although optional, users are encouraged to save their addresses for shipping pur
 in the settings page.
 
 The app consists of a _rate or hate_ activity where users can rate upcoming giveaways.
-Honey Co. will be indexable in the Uinted Kingdom only. Beta launch date is June 2021 on Android devices (iOS release date TBC).  
+Honey Co. will be indexable in the Uinted Kingdom only. Beta launch date is November 2021 on Android devices (iOS release date TBC).  
 Note: _Complete features of the app are not included in this repo as this is only an example of a real production app_. 
 
 ## Installation
